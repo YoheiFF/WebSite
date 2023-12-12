@@ -64,7 +64,9 @@ a {
   transform: translateX(-50%) translateY(-50%);
 }
 
-@media screen and (min-width: 768px) {
+
+
+/* @media screen and (min-width: 768px) { */
   /* kv */
   .kv{
     min-width: 960px;
@@ -131,4 +133,4 @@ a {
   .header-right a:hover {
     background-color: rgba(255,255,255,0.3);
   }
-}
+/* } */
