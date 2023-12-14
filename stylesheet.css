@@ -1,6 +1,11 @@
 body {
   margin: 0;
   font-family: "源ノ明朝", "GenEi Mincho", serif;
+  padding: 0;
+  background-image: url('5.jpg'); /* 画像のファイルパスに実際のファイル名を指定 */
+  background-size: cover; /* 画面全体に画像を広げる */
+  background-position: center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像を繰り返し表示しない */
 }
 
 a {
@@ -64,9 +69,7 @@ a {
   transform: translateX(-50%) translateY(-50%);
 }
 
-
-
-/* @media screen and (min-width: 768px) { */
+@media screen and (min-width: 768px) {
   /* kv */
   .kv{
     min-width: 960px;
@@ -87,7 +90,9 @@ a {
   header {
     height: 65px;
     width: 100%;
-    background-color: rgba(34,49,52,0.9);
+    /* background-color: rgba(142, 88, 56, 0.9); */
+    /* background-color: rgba(34,49,52,0.9); */
+    background-color: rgba(36, 0, 0, 0.69);
     position :fixed;
     top: 0;
     z-index: 10;
@@ -133,4 +138,11 @@ a {
   .header-right a:hover {
     background-color: rgba(255,255,255,0.3);
   }
-/* } */
+}
+/* 画面幅が 767px 以下の場合 */
+@media (max-width: 767px) {
+  .header-left,
+  .header-right {
+    display: none;
+  }
+}
