@@ -1,6 +1,20 @@
+:root {
+  --bs-font-sans-serif: "Hannari", "Yu Mincho", "Noto Serif JP", "游明朝", "Yu Gothic", serif;
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(36, 0, 0, 0.69);
+  position :fixed;
+  top: 0;
+  z-index: 10;
+  margin: 0;
+  font-family: var(--main-font);
+}
 body {
   margin: 0;
-  font-family: "源ノ明朝", "GenEi Mincho", serif;
+  font-family: var(--main-font);
   padding: 0;
   background-image: url('5.jpg'); /* 画像のファイルパスに実際のファイル名を指定 */
   background-size: cover; /* 画面全体に画像を広げる */
@@ -38,7 +52,7 @@ a {
 .video{
   width: 100%;
   height: 100vh;
-  background: url(../img/kv-alternative.jpg) no-repeat center/cover;
+  /* background: url(../img/kv-alternative.jpg) no-repeat center/cover; */
   position: absolute;
   top: 0;
   left: 0;
@@ -68,9 +82,53 @@ a {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* styles.css */
+.modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 透明な黒背景 */
+}
+.menuMini {
+  color: black;
+}
+
+.modal-content {
+  background-image: url('5.jpg');
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 @media screen and (min-width: 768px) {
-  /* kv */
+  .header-center {
+    display: none;
+  }
+
   .kv{
     min-width: 960px;
   }
@@ -87,23 +145,6 @@ a {
   .video{
     min-width: 960px;
   }
-  header {
-    height: 65px;
-    width: 100%;
-    /* background-color: rgba(142, 88, 56, 0.9); */
-    /* background-color: rgba(34,49,52,0.9); */
-    background-color: rgba(36, 0, 0, 0.69);
-    position :fixed;
-    top: 0;
-    z-index: 10;
-    margin: 0;
-    font-family: "源ノ明朝", "GenEi Mincho", serif;
-  }
-  .container {
-    width: 100%;
-    padding: 0 15px;
-    margin: 0 auto;
-  }
   .header-left {
     float: left;
   }
@@ -115,6 +156,7 @@ a {
     display: block;
     float: left;
     transition: all 0.5s;
+    text-decoration: none;
   }
   
   .header-left a:hover {
@@ -133,6 +175,7 @@ a {
     display: block;
     float: left;
     transition: all 0.5s;
+    text-decoration: none;
   }
   
   .header-right a:hover {
@@ -144,5 +187,22 @@ a {
   .header-left,
   .header-right {
     display: none;
+  }
+  .header-center {
+    text-align: center;
+  }
+  
+  .header-center a {
+    line-height: 65px;
+    padding: 0 25px;
+    color: white;
+    display: block;
+    text-align: center;
+    transition: all 0.5s;
+    text-decoration: none;
+  }
+  
+  .header-center a:hover {
+    background-color: rgba(255,255,255,0.3);
   }
 }
