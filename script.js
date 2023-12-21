@@ -1,25 +1,36 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function () {
-    // ボタンと子画面の要素を取得
+    // Modal-related elements
     var showModalBtn = document.getElementById('showModalBtn');
     var modalContainer = document.getElementById('modalContainer');
     var closeModalBtn = document.getElementById('closeModalBtn');
   
-    // ボタンがクリックされたときの処理
+    // Modal button click event
     showModalBtn.addEventListener('click', function () {
       modalContainer.style.display = 'block';
     });
   
-    // 子画面の閉じるボタンがクリックされたときの処理
+    // Close modal button click event
     closeModalBtn.addEventListener('click', function () {
       modalContainer.style.display = 'none';
     });
   
-    // 子画面の外側（背景）がクリックされたときの処理
+    // Close modal if clicked outside the modal
     window.addEventListener('click', function (event) {
       if (event.target === modalContainer) {
         modalContainer.style.display = 'none';
       }
     });
+  
+    const fadeInImage = document.getElementById('fadeInImage');
+
+    // 画像のフェードイン関数
+    const fadeIn = () => {
+      if (fadeInImage) {
+        fadeInImage.style.opacity = '1';
+      }
+    };
+    
+    // 指定した時間後にフェードインの表示を行う
+    setTimeout(fadeIn, 500); // 1秒後にフェードイン表示
   });
   
